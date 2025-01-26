@@ -3,6 +3,9 @@ import HeroOverlay from '../components/HeroOverlay.astro';
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
+import { Icon } from 'astro-icon/components';
+import HeroIconLeft from '../components/HeroIconLeft.astro';
+import HeroIconRight from '../components/HeroIconRight.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -10,4 +13,34 @@ import Navigation from '../components/Navigation.astro';
 <Layout>
   <Navigation />
   <HeroOverlay />
+  <HeroIconLeft
+    preText='expressed in'
+    mainText='Big God Theology'
+    description='This is a description of what we mean by Big God Theology'
+    icon='bible'
+  />
+  <HeroIconRight
+    preText='proclaimed by'
+    mainText='Persuasive Preaching'
+    description='This is a description of what we mean by Persuasive Preaching'
+    icon='preaching'
+  />
+  <HeroIconLeft
+    preText='portrayed through'
+    mainText='Intentional Ecclesiology'
+    description='This is a description of what we mean by Intentional Ecclesiology'
+    icon='church'
+  />
+  <HeroIconRight
+    preText='experienced as'
+    mainText='Compelling Community'
+    description='This is a description of what we mean by Compelling Community.'
+    icon='community'
+  />
+  <HeroIconLeft
+    preText='spread through'
+    mainText='Deliberately Rural Mission'
+    description='This is a description of what we mean by Deliberately Rural Mission'
+    icon='rural'
+  />
 </Layout>

@@ -1,0 +1,19 @@
+---
+import { Icon } from 'astro-icon/components';
+const { preText, mainText, description, icon } = Astro.props;
+---
+
+<div class='hero bg-secondary min-h-screen'>
+  <div class='hero-content flex-col lg:flex-row-reverse'>
+    <Icon name={icon} class='text-9xl text-accent' />
+    <div>
+      <h2 class='text-3xl text-base-300'>{preText}</h2>
+      <h1 class='text-5xl font-bold text-base-100'>
+        {mainText}
+      </h1>
+      <p class='py-6 text-base-300'>
+        {description}
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+---
+import { Icon } from 'astro-icon/components';
+const { preText, mainText, description, icon } = Astro.props;
+---
+
+<div class='hero bg-primary min-h-screen'>
+  <div class='hero-content flex-col lg:flex-row'>
+    <Icon name={icon} class='text-9xl text-accent' />
+    <!-- <img
+      src='https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp'
+      class='max-w-sm rounded-lg shadow-2xl'
+    /> -->
+    <div>
+      <h2 class='text-3xl text-base-300'>{preText}</h2>
+      <h1 class='text-5xl font-bold text-base-100'>{mainText}</h1>
+      <p class='py-6 text-base-300'>
+        {description}
+      </p>
+    </div>
+  </div>
+</div>
