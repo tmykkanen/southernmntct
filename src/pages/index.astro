@@ -7,6 +7,7 @@ import { Icon } from 'astro-icon/components';
 import HeroIconLeft from '../components/HeroIconLeft.astro';
 import HeroIconRight from '../components/HeroIconRight.astro';
 import Sidebar from '../components/Sidebar.astro';
+import HeroTextCenter from '../components/HeroTextCenter.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -14,61 +15,48 @@ import Sidebar from '../components/Sidebar.astro';
 <Layout>
   <Navigation />
   <Sidebar />
-  <HeroOverlay />
+  <HeroOverlay>
+    <h1 slot='title'>Come and Die</h1>
+    <p slot='subtitle'>
+      “Truly, truly, I say to you, unless a grain of wheat falls into the earth
+      and dies, it remains alone; but if it dies, <a href='#unstrategic'
+        >it bears much fruit.</a
+      >” (John 12:24)
+    </p>
+  </HeroOverlay>
 
-  <div class='hero bg-primary min-h-screen' id='unstrategic'>
-    <div class='hero-content text-center'>
-      <div class='max-w-3xl'>
-        <h1 class='text-5xl font-bold text-base-100'>
-          Jesus is decidedly unstrategic.
-        </h1>
-        <p class='py-6 text-base-300 text-2xl font-light'>
-          He came to the sound of angels singing and then spent the next thirty
-          years learning carpentry. Even during his public ministry, he spent
-          most of his time going at a slow pace in a small place. This is
-          unstrategic not because there was no plan, but because the plan
-          doesn’t make sense! Yet the madness of this plan is exactly how God
-          chose to display the upside-down nature of his Kingdom. Jesus won by
-          dying. Jesus chose two women to witness the resurrection. Jesus built
-          his church on the preaching of one of his betrayers. <a
-            href='#madness'
-            class='font-bold border-b-4 border-b-accent'
-            >Jesus' plan is beautiful—but mad.</a
-          >
-        </p>
-      </div>
-    </div>
-  </div>
+  <HeroTextCenter id='unstrategic'>
+    <h2 slot='headingText'>Jesus is decidedly unstrategic.</h2>
+    <p slot='bodyText'>
+      He came to the sound of angels singing and then spent the next thirty
+      years learning carpentry. Even during his public ministry, he spent most
+      of his time going at a slow pace in a small place. This is unstrategic not
+      because there was no plan, but because the plan doesn’t make sense! Yet
+      the madness of this plan is exactly how God chose to display the
+      upside-down nature of his Kingdom. Jesus won by dying. Jesus chose two
+      women to witness the resurrection. Jesus built his church on the preaching
+      of one of his betrayers. <a href='#madness'
+        >Many view rural ministry as unstrategic.</a
+      >
+    </p>
+  </HeroTextCenter>
 
-  <div class='hero bg-primary min-h-screen' id='madness'>
-    <div class='hero-content text-center'>
-      <div class='max-w-3xl'>
-        <h1 class='text-5xl font-bold text-base-100'>
-          Many view rural ministry as unstrategic.
-        </h1>
-        <p class='py-6 text-base-300 text-2xl font-light'>
-          Yet we believe rural ministry presents a unique opportunity to display
-          the very upside-down gospel we proclaim. Going at a slow pace in a
-          small place as we win by dying embodies the gospel logic of John
-          12:24. The slowness and smallness of this kind of ministry requires a
-          certain kind of gospel madness from those who pastor here. It’s the
-          kind of madness Wendell Berry calls for in his poem Manifesto: The Mad
-          Farmer Liberation Front:
-        </p>
-        <p class='py-6 text-base-300 text-2xl font-light'>
-          So, friends, every day do something that won’t compute. <br /> … Invest
-          in the millennium. Plant sequoias. <br />Say that your main crop is
-          the forest that you did not plant, that you will not live to harvest.
-        </p>
-        <p class='py-6 text-base-300 text-2xl font-light'>
-          We’ve caught this madness. And out of this gospel madness flows
-          <a href='#our vision' class='font-bold border-b-4 border-b-accent'>
-            our 100 year vision.</a
-          >
-        </p>
-      </div>
-    </div>
-  </div>
+  <HeroTextCenter id='madness'>
+    <h2 slot='headingText'>Many view rural ministry as unstrategic.</h2>
+    <p slot='bodyText'>
+      Yet we believe rural ministry presents a unique opportunity to display the
+      very upside-down gospel we proclaim. Going at a slow pace in a small place
+      as we win by dying embodies the gospel logic of John 12:24. The slowness
+      and smallness of this kind of ministry requires a certain kind of gospel
+      madness from those who pastor here. It’s the kind of madness Wendell Berry
+      calls for in his poem Manifesto: The Mad Farmer Liberation Front: <br />
+      So, friends, every day do something that won’t compute. <br /> … Invest in
+      the millennium. Plant sequoias. <br />Say that your main crop is the
+      forest that you did not plant, that you will not live to harvest. <br />
+      We’ve caught this madness. And out of this gospel madness flows
+      <a href='#our vision'>our 100 year vision.</a>
+    </p>
+  </HeroTextCenter>
 
   <div class='hero bg-primary min-h-screen' id='our vision'>
     <div class='hero-content text-center'>

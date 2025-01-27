@@ -1,0 +1,17 @@
+---
+const { id } = Astro.props;
+---
+
+<div class='hero bg-primary min-h-screen' id={id}>
+  <div
+    class='hero-content text-center prose
+    prose-h2:text-5xl prose-h2:font-bold prose-h2:text-base-100
+    prose-p:text-base-300 prose-p:text-2xl prose-p:font-light
+    prose-a:no-underline prose-a:font-bold prose-a:border-b-2 prose-a:pb-1 prose-a:border-b-accent prose-a:text-base-100'
+  >
+    <div class='max-w-3xl'>
+      <slot name='headingText' />
+      <slot name='bodyText' />
+    </div>
+  </div>
+</div>
