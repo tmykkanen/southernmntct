@@ -9,6 +9,7 @@ export default {
 	},
 	plugins: [
     daisyui,
+    require('@tailwindcss/typography'),
   ],
   daisyui: {
     themes: [
