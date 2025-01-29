@@ -1,0 +1,14 @@
+---
+const { title, content } = Astro.props;
+---
+
+<!-- Collapse Item -->
+<div tabindex='0' class='collapse collapse-plus bg-secondary'>
+  <div class='collapse-title text-xl font-medium text-base-100'>
+    {title}
+  </div>
+  <div class='collapse-content text-base-300'>
+    <p>{content}</p>
+  </div>
+</div>
+<!-- End Collapse -->

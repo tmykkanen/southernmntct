@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon/components';
+const { id } = Astro.props;
+import IconBlock from './IconBlock.astro';
+import visionData from '../data/visionData.js';
+
+const { visionTitle, visionSubtitle, visionContent } = visionData;
+
+// TODO: Make accordion for small screens
+---
+
+<!-- Icon Blocks -->
+<div
+  class='min-h-screen hero px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-secondary'
+  id={id}
+>
+  <!-- Grid -->
+  <div class='grid md:grid-cols-2 gap-12'>
+    <div class='lg:w-3/4'>
+      <h2 class='text-3xl text-base-100 font-bold lg:text-5xl'>
+        {visionTitle}
+      </h2>
+      <p class='mt-3 text-base-300 text-2xl'>
+        {visionSubtitle}
+      </p>
+    </div>
+    <!-- End Col -->
+
+    <div class='space-y-6 lg:space-y-10'>
+      {
+        visionContent.map((item) => (
+          <IconBlock
+            titlePre={item.titlePre}
+            title={item.title}
+            description={item.description}
+            iconName={item.icon}
+          />
+        ))
+      }
+    </div>
+    <!-- End Col -->
+  </div>
+  <!-- End Grid -->
+</div>
+<!-- End Icon Blocks -->

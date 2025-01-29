@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import HeroTextCenter from '../components/HeroTextCenter.astro';
+---
+
+<Layout>
+  <Navigation />
+
+  <HeroTextCenter id='about'>
+    <h2 slot='headingText'>About</h2>
+  </HeroTextCenter>
+</Layout>

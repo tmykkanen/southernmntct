@@ -1,0 +1,23 @@
+---
+interface Props {
+  iconName: string;
+  titlePre: string;
+  title: string;
+  description: string;
+}
+
+import { Icon } from 'astro-icon/components';
+const { iconName, titlePre, title, description } = Astro.props as Props;
+---
+
+<div class='flex gap-x-5 sm:gap-x-8'>
+  <!-- Icon -->
+  <Icon name={iconName} class='shrink-0 size-10 text-accent' />
+  <div class='grow'>
+    <h3 class='text-base sm:text-lg font-semibold text-base-100'>
+      <span class='text-base-300'>{titlePre}</span>
+      {title}
+    </h3>
+    <p class='mt-1 text-base-300'>{description}</p>
+  </div>
+</div>

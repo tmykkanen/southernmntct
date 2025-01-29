@@ -3,18 +3,14 @@ import HeroOverlay from '../components/HeroOverlay.astro';
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
-import { Icon } from 'astro-icon/components';
-import HeroIconLeft from '../components/HeroIconLeft.astro';
-import HeroIconRight from '../components/HeroIconRight.astro';
-import Sidebar from '../components/Sidebar.astro';
 import HeroTextCenter from '../components/HeroTextCenter.astro';
+import DescLeftIconBlocksRight from '../components/DescLeftIconBlocksRight.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
   <Navigation />
-  <Sidebar />
   <HeroOverlay>
     <h1 slot='title'>Come and Die</h1>
     <p slot='subtitle'>
@@ -35,86 +31,37 @@ import HeroTextCenter from '../components/HeroTextCenter.astro';
       the madness of this plan is exactly how God chose to display the
       upside-down nature of his Kingdom. Jesus won by dying. Jesus chose two
       women to witness the resurrection. Jesus built his church on the preaching
-      of one of his betrayers. <a href='#madness'
+      of one of his betrayers. <a href='#imaginary'
         >Many view rural ministry as unstrategic.</a
       >
     </p>
   </HeroTextCenter>
 
-  <HeroTextCenter id='madness'>
+  <HeroTextCenter id='imaginary'>
     <h2 slot='headingText'>Many view rural ministry as unstrategic.</h2>
-    <p slot='bodyText'>
-      Yet we believe rural ministry presents a unique opportunity to display the
-      very upside-down gospel we proclaim. Going at a slow pace in a small place
-      as we win by dying embodies the gospel logic of John 12:24. The slowness
-      and smallness of this kind of ministry requires a certain kind of gospel
-      madness from those who pastor here. It’s the kind of madness Wendell Berry
-      calls for in his poem Manifesto: The Mad Farmer Liberation Front: <br />
-      So, friends, every day do something that won’t compute. <br /> … Invest in
-      the millennium. Plant sequoias. <br />Say that your main crop is the
-      forest that you did not plant, that you will not live to harvest. <br />
-      We’ve caught this madness. And out of this gospel madness flows
-      <a href='#our vision'>our 100 year vision.</a>
-    </p>
-  </HeroTextCenter>
-
-  <div class='hero bg-primary min-h-screen' id='our vision'>
-    <div class='hero-content text-center'>
-      <div class='max-w-3xl'>
-        <h1 class='text-5xl font-bold text-base-100'>
-          Over the next 100 years,
-        </h1>
-        <p class='py-6 text-base-100 text-2xl'>
-          we aim to start and strengthen churches in Southern MN that share a
-          gospel imaginary
-        </p>
-        <ol class='steps steps-vertical text-base-100'>
-          <li class='step step-secondary'>(expressed in) Big God Theology</li>
-          <li class='step step-secondary'>
-            (proclaimed by) Persuasive Preaching
-          </li>
-          <li class='step step-secondary'>
-            (portrayed through) Intentional Ecclesiology
-          </li>
-          <li class='step step-secondary'>
-            (experienced as) Compelling Culture
-          </li>
-          <li class='step step-secondary'>
-            (and spread through) Deliberately Rural Mission
-          </li>
-        </ol>
-      </div>
+    <div slot='bodyText'>
+      <p>
+        Yet we believe rural ministry presents a unique opportunity to display
+        the very upside-down gospel we proclaim. Going at a slow pace in a small
+        place as we win by dying embodies the gospel logic of John 12:24. The
+        slowness and smallness of this kind of ministry requires a certain kind
+        of <strong>gospel imaginary</strong> from those who pastor here. It’s the
+        kind of imaginary Wendell Berry calls for in his poem <em
+          >Manifesto: The Mad Farmer Liberation Front:</em
+        >
+      </p>
+      <pre>
+        So, friends, every day do something
+        that won’t compute....
+        Invest in the millennium. Plant sequoias.
+        Say that your main crop is the
+        forest that you did not plant, that you will not live to harvest.</pre>
+      <p>
+        We’ve caught this madness. And out of this gospel madness flows <a
+          href='#vision'>our 100 year vision.</a
+        >
+      </p>
     </div>
-  </div>
-
-  <HeroIconLeft
-    preText='expressed in'
-    mainText='Big God Theology'
-    description='This is a description of what we mean by Big God Theology'
-    icon='bible'
-  />
-  <HeroIconRight
-    preText='proclaimed by'
-    mainText='Persuasive Preaching'
-    description='This is a description of what we mean by Persuasive Preaching'
-    icon='preaching'
-  />
-  <HeroIconLeft
-    preText='portrayed through'
-    mainText='Intentional Ecclesiology'
-    description='This is a description of what we mean by Intentional Ecclesiology'
-    icon='church'
-  />
-  <HeroIconRight
-    preText='experienced as'
-    mainText='Compelling Community'
-    description='This is a description of what we mean by Compelling Community.'
-    icon='community'
-  />
-  <HeroIconLeft
-    preText='spread through'
-    mainText='Deliberately Rural Mission'
-    description='This is a description of what we mean by Deliberately Rural Mission'
-    icon='rural'
-  />
+  </HeroTextCenter>
+  <DescLeftIconBlocksRight id='vision' />
 </Layout>
