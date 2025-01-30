@@ -1,9 +1,12 @@
 ---
-// const { imgPath } = Astro.props;
-const imgPath = '/images/ivan-bandura-XsAz9Mq61XY-unsplash.jpg';
+interface Props {
+  img: string;
+}
+
+const { img } = Astro.props;
 ---
 
-<div class='hero min-h-screen' style=`background-image: url(${imgPath});`>
+<div class=`hero min-h-screen bg-[url(${img})]`>
   <div class='hero-overlay bg-opacity-60'></div>
   <div
     class='hero-content text-primary text-center prose
@@ -11,10 +14,11 @@ const imgPath = '/images/ivan-bandura-XsAz9Mq61XY-unsplash.jpg';
     prose-p:text-4xl prose-p:mb-5
     prose-a:no-underline prose-a:font-bold prose-a:border-b-4 prose-a:border-b-accent prose-a:text-primary prose-a:p-1
     hover:prose-a:bg-accent hover:prose-a:rounded-lg hover:prose-a:p-1'
+    x-data
+    x-intersect:enter='$el.classList.add("fadeInUp")'
+    x-intersect:leave='$el.classList.remove("fadeInUp")'
   >
-    <div class=''>
-      <slot name='title' />
-      <slot name='subtitle' />
-    </div>
+    <slot name='heading' />
+    <slot name='subheading' />
   </div>
 </div>

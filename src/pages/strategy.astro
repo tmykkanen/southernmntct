@@ -1,15 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import HeroTextCenter from '../components/HeroTextCenter.astro';
-import HeroTextLeft from '../components/HeroTextLeft.astro';
-import Collapse from '../components/Collapse.astro';
 import FeatureBlockRight from '../components/FeatureBlockRight.astro';
-import planData from '../data/planData.js';
+import strategyData from '../data/strategyData.js';
 ---
 
 <Layout>
-  <Navigation />
-
-  <FeatureBlockRight id='plan' data={planData} />
+  <FeatureBlockRight id='vision' data={strategyData}>
+    <Fragment slot='heading'>Our Strategy</Fragment>
+  </FeatureBlockRight>
 </Layout>

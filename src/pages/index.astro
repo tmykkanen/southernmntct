@@ -1,41 +1,31 @@
 ---
 import HeroOverlay from '../components/HeroOverlay.astro';
 import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
 import HeroTextCenter from '../components/HeroTextCenter.astro';
-import DescLeftIconBlocksRight from '../components/DescLeftIconBlocksRight.astro';
+import FeatureBlockRight from '../components/FeatureBlockRight.astro';
+import visionData from '../data/visionData.js';
 ---
 
 <Layout>
-  
+  <HeroOverlay img='/images/ivan-bandura-XsAz9Mq61XY-unsplash.jpg'>
+    <h1 slot='heading'>
+      Filling Southern MN with healthy churches <a href='#imaginary-1'
+        >for the next 100 years.</a
+      >
+    </h1>
 
-  <HeroOverlay>
-    <!-- Fade in / up animation -->
-    <div
-      slot='title'
-      class=''
-      x-data
-      x-intersect='$el.classList.add("fadeInUp")'
-    >
-      <h1>
-        Filling Southern MN with healthy churches <a href='#imaginary-1'
-          >for the next 100 years.</a
-        >
-      </h1>
-    </div>
-
-    <!-- <h1 slot='title'>Come and Die</h1>
-    <p slot='subtitle'>
+    <!-- <h1 slot='heading'>Come and Die</h1>
+    <p slot='subheading'>
       “Truly, truly, I say to you, unless a grain of wheat falls into the earth
-      and dies, it remains alone; but if it dies, <a href='#unstrategic'
+      and dies, it remains alone; but if it dies, <a href='#imaginary-1'
         >it bears much fruit.</a
       >” (John 12:24)
     </p> -->
   </HeroOverlay>
 
   <HeroTextCenter id='imaginary-1'>
-    <h2 slot='headingText'>Jesus is decidedly unstrategic.</h2>
-    <p slot='bodyText'>
+    <h2 slot='heading'>Jesus is decidedly unstrategic.</h2>
+    <p slot='body'>
       He came to the sound of angels singing and then spent the next thirty
       years learning carpentry. Even during his public ministry, he spent most
       of his time going at a slow pace in a small place. This is unstrategic not
@@ -50,8 +40,8 @@ import DescLeftIconBlocksRight from '../components/DescLeftIconBlocksRight.astro
   </HeroTextCenter>
 
   <HeroTextCenter id='imaginary-2'>
-    <h2 slot='headingText'>Many view rural ministry as unstrategic.</h2>
-    <div slot='bodyText'>
+    <h2 slot='heading'>Many view rural ministry as unstrategic.</h2>
+    <div slot='body'>
       <p>
         Yet we believe rural ministry presents a unique opportunity to display
         the very upside-down gospel we proclaim. Going at a slow pace in a small
@@ -80,7 +70,12 @@ import DescLeftIconBlocksRight from '../components/DescLeftIconBlocksRight.astro
       </p>
     </div>
   </HeroTextCenter>
-  <DescLeftIconBlocksRight id='vision' />
+  <FeatureBlockRight id='vision' data={visionData}>
+    <Fragment slot='heading'>
+      Over the next 100 years, we aim to start and strengthen churches in
+      Southern MN that share a Gospel Imaginary.
+    </Fragment>
+  </FeatureBlockRight>
 </Layout>
 
 <style></style>

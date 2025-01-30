@@ -1,4 +1,8 @@
 ---
+interface Props {
+  id: string;
+}
+
 const { id } = Astro.props;
 ---
 
@@ -18,8 +22,8 @@ const { id } = Astro.props;
       x-intersect:enter='$el.classList.add("slide-in-focus-left")'
       x-intersect:leave='$el.classList.remove("slide-in-focus-left")'
     >
-      <slot name='headingText' />
-      <slot name='bodyText' />
+      <slot name='heading' />
+      <slot name='body' />
     </div>
   </div>
 </div>
