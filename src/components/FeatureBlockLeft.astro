@@ -1,0 +1,43 @@
+---
+interface Props {
+  id: string;
+  data: Object[];
+}
+
+import IconBlock from './IconBlock.astro';
+
+const { data, id } = Astro.props;
+
+// TODO: Make accordion for small screens?
+---
+
+<div class='hero bg-secondary min-h-screen' id={id}>
+  <div class='grid md:grid-cols-2 gap-12 mt-24'>
+    <!-- ICON BLOCK -->
+    <div class='my-auto space-y-6 lg:space-y-10'>
+      {
+        data.map((item: any) => (
+          <IconBlock
+            titlePre={item.titlePre}
+            title={item.title}
+            description={item.description}
+            iconName={item.icon}
+            link={item.link}
+          />
+        ))
+      }
+    </div>
+    <!-- END ICON BLOCK -->
+    <!-- HEADING -->
+    <div
+      class='hero-content text-center prose
+    prose-h2:text-5xl prose-h2:font-bold prose-h2:text-base-100'
+    >
+      <h2 class='text-3xl text-base-100 font-bold lg:text-5xl'>
+        <slot name='heading' />
+      </h2>
+      <p class='mt-3 text-base-300 text-2xl'></p>
+    </div>
+    <!-- END HEADING -->
+  </div>
+</div>
