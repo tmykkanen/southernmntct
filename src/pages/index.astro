@@ -1,27 +1,39 @@
 ---
 import HeroOverlay from '../components/HeroOverlay.astro';
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import HeroTextCenter from '../components/HeroTextCenter.astro';
 import DescLeftIconBlocksRight from '../components/DescLeftIconBlocksRight.astro';
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-  <Navigation />
+  
+
   <HeroOverlay>
-    <h1 slot='title'>Come and Die</h1>
+    <!-- Fade in / up animation -->
+    <div
+      slot='title'
+      class=''
+      x-data
+      x-intersect='$el.classList.add("fadeInUp")'
+    >
+      <h1>
+        Filling Southern MN with healthy churches <a href='#imaginary-1'
+          >for the next 100 years.</a
+        >
+      </h1>
+    </div>
+
+    <!-- <h1 slot='title'>Come and Die</h1>
     <p slot='subtitle'>
       “Truly, truly, I say to you, unless a grain of wheat falls into the earth
       and dies, it remains alone; but if it dies, <a href='#unstrategic'
         >it bears much fruit.</a
       >” (John 12:24)
-    </p>
+    </p> -->
   </HeroOverlay>
 
-  <HeroTextCenter id='unstrategic'>
+  <HeroTextCenter id='imaginary-1'>
     <h2 slot='headingText'>Jesus is decidedly unstrategic.</h2>
     <p slot='bodyText'>
       He came to the sound of angels singing and then spent the next thirty
@@ -31,20 +43,25 @@ import DescLeftIconBlocksRight from '../components/DescLeftIconBlocksRight.astro
       the madness of this plan is exactly how God chose to display the
       upside-down nature of his Kingdom. Jesus won by dying. Jesus chose two
       women to witness the resurrection. Jesus built his church on the preaching
-      of one of his betrayers. <a href='#imaginary'
-        >Many view rural ministry as unstrategic.</a
+      of one of his betrayers. Jesus' plan is beautiful—but mad. <a
+        href='#imaginary-2'>Believing it takes imagination.</a
       >
     </p>
   </HeroTextCenter>
 
-  <HeroTextCenter id='imaginary'>
+  <HeroTextCenter id='imaginary-2'>
     <h2 slot='headingText'>Many view rural ministry as unstrategic.</h2>
     <div slot='bodyText'>
       <p>
         Yet we believe rural ministry presents a unique opportunity to display
         the very upside-down gospel we proclaim. Going at a slow pace in a small
-        place as we win by dying embodies the gospel logic of John 12:24. The
-        slowness and smallness of this kind of ministry requires a certain kind
+        place as we win by dying embodies the gospel logic of John 12:24:
+        <em>
+          “Truly, truly, I say to you, unless a grain of wheat falls into the
+          earth and dies, it remains alone; but if it dies, it bears much
+          fruit."
+        </em>
+        The slowness and smallness of this kind of ministry requires a certain kind
         of <strong>gospel imaginary</strong> from those who pastor here. It’s the
         kind of imaginary Wendell Berry calls for in his poem <em
           >Manifesto: The Mad Farmer Liberation Front:</em
@@ -57,7 +74,7 @@ import DescLeftIconBlocksRight from '../components/DescLeftIconBlocksRight.astro
         Say that your main crop is the
         forest that you did not plant, that you will not live to harvest.</pre>
       <p>
-        We’ve caught this madness. And out of this gospel madness flows <a
+        We’ve caught this madness. And out of this gospel madness flows<a
           href='#vision'>our 100 year vision.</a
         >
       </p>
@@ -65,3 +82,5 @@ import DescLeftIconBlocksRight from '../components/DescLeftIconBlocksRight.astro
   </HeroTextCenter>
   <DescLeftIconBlocksRight id='vision' />
 </Layout>
+
+<style></style>

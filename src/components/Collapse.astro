@@ -1,5 +1,5 @@
 ---
-const { title, content } = Astro.props;
+const { title, content, href } = Astro.props;
 ---
 
 <!-- Collapse Item -->
@@ -9,6 +9,7 @@ const { title, content } = Astro.props;
   </div>
   <div class='collapse-content text-base-300'>
     <p>{content}</p>
+    <a href={href}>Learn More</a>
   </div>
 </div>
 <!-- End Collapse -->

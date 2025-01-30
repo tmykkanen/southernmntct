@@ -9,7 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@alpinejs/intersect": "^3.14.8",
+    "@astrojs/alpinejs": "^0.4.3",
     "@astrojs/tailwind": "^5.1.5",
+    "@types/alpinejs": "^3.13.11",
+    "alpinejs": "^3.14.8",
     "astro": "^5.1.9",
     "astro-icon": "^1.1.5",
     "preline": "^2.7.0",

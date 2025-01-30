@@ -1,6 +1,6 @@
 const visionData = {
   visionTitle: 'Over the next 100 years',
-  visionSubtitle: 'we aim to start and strengthen churches in Southern MN that share a gospel imaginary',
+  visionSubtitle: 'we aim to start and strengthen churches in Southern MN that share a Gospel Imaginary',
   visionContent: [
      {
       titlePre: 'expressed in',
