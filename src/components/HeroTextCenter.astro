@@ -6,7 +6,7 @@ interface Props {
 const { id } = Astro.props;
 ---
 
-<div class='hero bg-primary min-h-screen' id={id}>
+<div class='hero bg-primary min-h-screen min-w-screen' id={id}>
   <div
     class='hero-content text-center prose
     prose-h2:text-5xl prose-h2:font-bold prose-h2:text-base-100
@@ -15,8 +15,9 @@ const { id } = Astro.props;
     prose-a:no-underline prose-a:font-bold prose-a:border-b-2 prose-a:pb-1 prose-a:border-b-accent prose-a:text-base-100 prose-a:p-1
     hover:prose-a:bg-accent hover:prose-a:rounded-lg hover:prose-a:p-1'
   >
+    <!-- FIXME: Adding a width limit keeps the container from overflowing -->
     <div
-      class='max-w-3xl'
+      class='w-4/5'
       x-data
       x-intersect:enter='$el.classList.add("slide-in-focus-left")'
       x-intersect:leave='$el.classList.remove("slide-in-focus-left")'

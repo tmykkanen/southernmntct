@@ -15,7 +15,7 @@
       }
     }
     .fadeInUp {
-      animation: fadeInUp .7s;
+      animation: fadeInUp 1s;
     }
     @keyframes scale {
       0% {
@@ -134,7 +134,7 @@
  @keyframes slide-in-focus-left {
   0% {
     filter: blur(12px);
-    transform: translateX(100%);
+    transform: translateX(10%);
     opacity: 0;
   }
   100% {
@@ -146,6 +146,6 @@
 
 
 .slide-in-focus-left {
-	animation: slide-in-focus-left 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-in-focus-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
   }
