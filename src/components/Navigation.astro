@@ -1,9 +1,12 @@
 ---
 import navData from '../data/navData.js';
 import { Icon } from 'astro-icon/components';
+
+// TODO: Configure to use fullscreen modal in mobile view
 ---
 
-<div class='navbar bg-base-100 fixed top-0 z-50'>
+<!-- <div id='page-header' class='navbar bg-base-100 fixed top-0 z-50'> -->
+<div id='page-header' class='navbar absolute bg-base-100 bottom-0 z-50'>
   <div class='navbar-start'>
     <div class='dropdown'>
       <div tabindex='0' role='button' class='btn btn-ghost lg:hidden'>
@@ -71,9 +74,19 @@ import { Icon } from 'astro-icon/components';
     </ul>
   </div>
   <div class='navbar-end'>
-    <a class='btn'>Contact Us</a>
+    <a class='btn hidden lg:flex'>Contact Us</a>
   </div>
 </div>
+
+<script>
+  const header = document.querySelector('#page-header') as HTMLElement;
+  const page = document.documentElement;
+
+  document.addEventListener('scroll', () => {
+    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
+    header.classList.toggle('fixed-header', d < 0);
+  });
+</script>
 
 <style>
   .btn {
@@ -81,5 +94,10 @@ import { Icon } from 'astro-icon/components';
   }
   .menu a {
     @apply hover:bg-accent hover:text-base-100 mx-2;
+  }
+
+  .fixed-header {
+    @apply fixed bottom-auto top-0;
+    /* @apply border-default bg-default text-default; */
   }
 </style>

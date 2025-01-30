@@ -9,9 +9,8 @@ import visionData from '../data/visionData.js';
 <Layout>
   <HeroOverlay img='/images/ivan-bandura-XsAz9Mq61XY-unsplash.jpg'>
     <h1 slot='heading'>
-      Filling Southern MN with healthy churches <a href='#imaginary-1'
-        >for the next 100 years.</a
-      >
+      Filling Southern MN with healthy churches
+      <a href='#imaginary-1'>for the next 100 years.</a>
     </h1>
 
     <!-- <h1 slot='heading'>Come and Die</h1>
@@ -57,12 +56,12 @@ import visionData from '../data/visionData.js';
           >Manifesto: The Mad Farmer Liberation Front:</em
         >
       </p>
-      <pre>
-        So, friends, every day do something
-        that won’t compute....
-        Invest in the millennium. Plant sequoias.
-        Say that your main crop is the
-        forest that you did not plant, that you will not live to harvest.</pre>
+      <p class='poetry'>
+        So, friends, every day do something that won’t compute.... Invest in the
+        millennium. Plant sequoias. Say that your main crop is the forest that
+        you did not plant, that you will not live to harvest.
+        <!-- prose-pre:text-left prose-pre:text-base-300 prose-pre:text-2xl prose-pre:font-light prose-pre:bg-transparent prose-pre:font-sans prose-pre:mt-7 prose-pre:mb-7 prose-pre:italic' -->
+      </p>
       <p>
         We’ve caught this madness. And out of this gospel madness flows<a
           href='#vision'>our 100 year vision.</a
@@ -78,4 +77,9 @@ import visionData from '../data/visionData.js';
   </FeatureBlockRight>
 </Layout>
 
-<style></style>
+<style>
+  .poetry {
+    @apply text-left italic
+    /* prose-pre:text-base-300 prose-pre:text-2xl prose-pre:font-light prose-pre:bg-transparent prose-pre:font-sans prose-pre:mt-7 prose-pre:mb-7 prose-pre:italic; */;
+  }
+</style>
