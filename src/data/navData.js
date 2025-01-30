@@ -5,8 +5,22 @@ const navData = [
   },
   {
     name: "Our Strategy",
-    path: "/strategy"
-  },
+    path: "/strategy",
+    submenu: [
+      {
+        name: "Fellowship",
+        path: "/strategy#fellowship",
+      },
+      {
+        name: "Internship",
+        path: "/internship",
+      },
+      {
+        name: "Residency",
+        path: "/residency",
+      }
+    ]
+    },
   {
     name: "Who We Are",
     path: "/about"

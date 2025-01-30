@@ -4,10 +4,11 @@ interface Props {
   titlePre: string;
   title: string;
   description: string;
+  link?: string;
 }
 
 import { Icon } from 'astro-icon/components';
-const { iconName, titlePre, title, description } = Astro.props as Props;
+const { iconName, titlePre, title, description, link } = Astro.props as Props;
 ---
 
 <div class='flex gap-x-5 sm:gap-x-8'>
@@ -19,5 +20,15 @@ const { iconName, titlePre, title, description } = Astro.props as Props;
       {title}
     </h3>
     <p class='mt-1 text-base-300'>{description}</p>
+    {
+      link && (
+        <a
+          href={link}
+          class='text-base-300 border-b-2 border-accent hover:bg-accent hover:text-primary hover:rounded-sm hover:border-2'
+        >
+          Learn More
+        </a>
+      )
+    }
   </div>
 </div>

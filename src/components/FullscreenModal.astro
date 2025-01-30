@@ -1,5 +1,6 @@
 ---
 import navData from '../data/navData.js';
+
 ---
 
 <div
@@ -16,7 +17,12 @@ import navData from '../data/navData.js';
       class='flex flex-col bg-white pointer-events-auto max-w-full max-h-full h-full'
     >
       <div class='flex justify-between items-center py-3 px-4 border-b'>
-        <h3 id='hs-full-screen-label' class='font-bold text-primary'>Menu</h3>
+        <h3 id='hs-full-screen-label' class='font-bold text-primary'>
+          <a class='btn btn-ghost text-xl' href='/'>
+            <!-- <Icon name='tct_logo' class='text-4xl' /> -->
+            Southern MN TCT
+          </a>
+        </h3>
         <button
           type='button'
           class='size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none'
@@ -42,15 +48,19 @@ import navData from '../data/navData.js';
         </button>
       </div>
       <div class='p-4 overflow-y-auto'>
-        <ul
-          tabindex='0'
-          class='menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow'
-        >
-          <li></li>
+        <ul class='menu modal-menu'>
           {
-            navData.map((link) => (
+            navData.map((item) => (
               <li>
-                <a href={link.path}>{link.name}</a>
+                <a href={item.path}>{item.name}</a>
+                <ul>
+                  {item.submenu &&
+                    item.submenu.map((subitem) => (
+                      <li>
+                        <a href={subitem.path}>{subitem.name}</a>
+                      </li>
+                    ))}
+                </ul>
               </li>
             ))
           }
@@ -59,3 +69,22 @@ import navData from '../data/navData.js';
     </div>
   </div>
 </div>
+
+<script>
+  import { HSAccordion, HSOverlay } from 'preline';
+
+  const page = document.documentElement;
+  const links = page.querySelectorAll('li > a');
+
+  links.forEach((element) => {
+    element.addEventListener('click', () => {
+      console.log('close');
+      HSOverlay.close('#hs-full-screen-modal');
+    });
+  });
+
+  //   openBtn.addEventListener('click', () => {
+  //   HSOverlay.open('#modal');
+  // });
+  // console.log(links);
+</script>

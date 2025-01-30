@@ -1,7 +1,7 @@
 ---
 import '../css/base.css';
-import Navigation from '../components/Navigation.astro';
 import FullscreenModal from '../components/FullscreenModal.astro';
+import Header from '../components/Header.astro';
 ---
 
 <!doctype html>
@@ -14,7 +14,8 @@ import FullscreenModal from '../components/FullscreenModal.astro';
     <title>Southern MN TCT</title>
   </head>
   <body>
-    <Navigation />
+    <Header />
+    <!-- <Navigation /> -->
     <FullscreenModal />
     <slot />
   </body>

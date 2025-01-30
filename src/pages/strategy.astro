@@ -2,10 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import FeatureBlockRight from '../components/FeatureBlockRight.astro';
 import strategyData from '../data/strategyData.js';
+import HeroTextCenter from '../components/HeroTextCenter.astro';
 ---
 
 <Layout>
   <FeatureBlockRight id='vision' data={strategyData}>
     <Fragment slot='heading'>Our Strategy</Fragment>
   </FeatureBlockRight>
+  <HeroTextCenter id='fellowship'>
+    <h2 slot='heading'>Monthly Pastoral Fellowship</h2>
+    <p slot='body'>More info about monthly fellowship</p>
+  </HeroTextCenter>
+  <HeroTextCenter id='fellowship'>
+    <h2 slot='heading'>Monthly Pastoral Fellowship</h2>
+    <p slot='body'>More info about monthly fellowship</p>
+  </HeroTextCenter>
 </Layout>

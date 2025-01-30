@@ -1,0 +1,71 @@
+---
+import navData from '../data/navData.js';
+import { Icon } from 'astro-icon/components';
+import FullscreenModalButton from './FullscreenModalButton.astro';
+
+const currentPath = Astro.url.pathname;
+console.log(currentPath);
+
+// TODO: Refactor using astro.self? https://docs.astro.build/en/reference/astro-syntax/#astroself
+---
+
+<!-- <div id='page-header' class='navbar bg-base-100 fixed top-0 z-50'> -->
+<header id='page-header' class='navbar bg-base-100 z-50 fixed-header'>
+  <div class='navbar-start'>
+    <!-- <div class='dropdown'> -->
+    <FullscreenModalButton />
+    <!-- </div> -->
+    <a class='btn btn-ghost text-xl hidden lg:flex' href='/'>
+      <Icon name='tct_logo' class='text-4xl' />
+      Southern MN TCT
+    </a>
+  </div>
+  <div class='navbar-center hidden lg:flex'>
+    <ul class='menu menu-horizontal px-1'>
+      {
+        navData.map((link) => (
+          <li>
+            <a href={link.path}>{link.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class='navbar-end'>
+    <a class='btn hidden lg:flex'>Contact Us</a>
+    <a class='btn btn-ghost text-xl lg:hidden' href='/'>
+      <!-- <Icon name='tct_logo' class='text-4xl' /> -->
+      Southern MN TCT
+    </a>
+  </div>
+</header>
+
+<script define:vars={{ currentPath }}>
+  const header = document.querySelector('#page-header');
+  const page = document.documentElement;
+
+  // Display unique positioning / behavior for navbar on homepage
+  if (currentPath === '/') {
+    header.classList.remove('fixed-header');
+    header.classList.add('absolute', 'bottom-0');
+
+    document.addEventListener('scroll', () => {
+      const d = page.clientHeight - page.scrollTop - header.offsetHeight;
+      header.classList.toggle('fixed-header', d < 0);
+    });
+  }
+</script>
+
+<style>
+  .btn {
+    @apply hover:bg-accent hover:text-base-100;
+  }
+  .menu a {
+    @apply hover:bg-accent hover:text-base-100 mx-2;
+  }
+
+  .fixed-header {
+    @apply fixed bottom-auto top-0;
+    /* @apply border-default bg-default text-default; */
+  }
+</style>
