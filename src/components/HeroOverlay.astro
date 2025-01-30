@@ -4,9 +4,14 @@ interface Props {
 }
 
 const { img } = Astro.props;
+const imgUrl = `url(${img})`;
+const color = 'rgb(239, 68, 68)';
 ---
 
-<div class=`hero min-h-screen bg-[url(${img})]`>
+<div
+  class=`hero min-h-screen bg-[url:var(--img-url)]`
+  style={{ '--img-url': imgUrl }}
+>
   <div class='hero-overlay bg-opacity-60'></div>
   <div
     class='hero-content text-primary text-center prose
