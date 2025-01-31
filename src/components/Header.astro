@@ -10,17 +10,17 @@ console.log(currentPath);
 ---
 
 <!-- <div id='page-header' class='navbar bg-base-100 fixed top-0 z-50'> -->
-<header id='page-header' class='navbar bg-base-100 z-50 fixed-header'>
+<header id='page-header' class='navbar bg-neutral z-50 fixed-header'>
   <div class='navbar-start'>
     <!-- <div class='dropdown'> -->
     <FullscreenModalButton />
     <!-- </div> -->
-    <a class='btn btn-ghost text-xl hidden lg:flex' href='/'>
+    <a class='btn btn-ghost text-xl hidden lg:flex text-primary' href='/'>
       <Icon name='tct_logo' class='text-4xl' />
       Southern MN TCT
     </a>
   </div>
-  <div class='navbar-center hidden lg:flex'>
+  <div class='navbar-center hidden text-primary lg:flex'>
     <ul class='menu menu-horizontal px-1'>
       {
         navData.map((link) => (
@@ -32,8 +32,8 @@ console.log(currentPath);
     </ul>
   </div>
   <div class='navbar-end'>
-    <a class='btn hidden lg:flex'>Contact Us</a>
-    <a class='btn btn-ghost text-xl lg:hidden' href='/'>
+    <a class='btn btn-ghost text-primary hidden lg:flex'>Contact Us</a>
+    <a class='btn btn-ghost text-xl lg:hidden text-primary' href='/'>
       <!-- <Icon name='tct_logo' class='text-4xl' /> -->
       Southern MN TCT
     </a>
@@ -58,14 +58,13 @@ console.log(currentPath);
 
 <style>
   .btn {
-    @apply hover:bg-accent hover:text-base-100;
+    /* @apply hover:bg-accent hover:text-base-100; */
   }
-  .menu a {
+  /* .menu a {
     @apply hover:bg-accent hover:text-base-100 mx-2;
-  }
-
+  } */
+  /* 
   .fixed-header {
     @apply fixed bottom-auto top-0;
-    /* @apply border-default bg-default text-default; */
-  }
+  } */
 </style>

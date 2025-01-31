@@ -15,16 +15,16 @@ const { iconName, titlePre, title, description, link } = Astro.props as Props;
   <!-- Icon -->
   <Icon name={iconName} class='shrink-0 size-10 text-accent' />
   <div class='grow'>
-    <h3 class='text-base sm:text-lg font-semibold text-base-100'>
-      <span class='text-base-300'>{titlePre}</span>
+    <h3 class='sm:text-lg font-semibold'>
+      <span class=''>{titlePre}</span>
       {title}
     </h3>
-    <p class='mt-1 text-base-300'>{description}</p>
+    <p class='mt-1'>{description}</p>
     {
       link && (
         <a
           href={link}
-          class='text-base-300 border-b-2 border-accent hover:bg-accent hover:text-primary hover:rounded-sm hover:border-2'
+          class=' border-b-2 border-accent hover:bg-accent hover:text-primary hover:rounded-sm hover:border-2'
         >
           Learn More
         </a>

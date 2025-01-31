@@ -1,0 +1,64 @@
+---
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+
+// use for hero layout; use hero content for formatting content
+---
+
+<!-- 
+  .hero {
+  display: grid;
+  width: 100%;
+  place-items: center;
+  background-size: cover;
+  background-position: center;
+}
+.hero > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+  .hero-content {
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 80rem /* 1280px */;
+  gap: 1rem /* 16px */;
+  padding: 1rem /* 16px */;
+}
+-->
+<div
+  class='grid w-full place-items-center bg-cover bg-center
+min-h-screen min-w-screen'
+  id={id}
+>
+  <div
+    class='prose z-0 flex items-center justify-center gap-4 p-4 col-start-1 row-start-1
+    prose-h2:text-5xl prose-h2:font-bold
+    prose-p:text-2xl prose-p:font-light
+    prose-a:no-underline prose-a:border-b-2 prose-a:pb-1 prose-a:border-b-accent prose-a:p-1
+    hover:prose-a:bg-accent hover:prose-a:rounded-lg hover:prose-a:p-1'
+    x-data
+    x-intersect:enter='$el.classList.add("slide-in-focus-left")'
+    x-intersect:leave='$el.classList.remove("slide-in-focus-left")'
+  >
+    <!-- FIXME: Adding a width limit keeps the container from overflowing -->
+    <!-- <div
+      class='w-4/5'
+      x-data
+      x-intersect:enter='$el.classList.add("slide-in-focus-left")'
+      x-intersect:leave='$el.classList.remove("slide-in-focus-left")'
+    > -->
+    <slot />
+    <!-- </div> -->
+  </div>
+</div>
+
+<style>
+  pre {
+    background: none;
+  }
+</style>

@@ -25,6 +25,13 @@ export default {
           "neutral": "#fff",
           "base-100": "#EEEEEE",
         },
+        customdark: {
+          "primary": "#222831",
+          "secondary": "#393E46",
+          "accent": "#00ADB5",
+          "neutral": "#eeeeee",
+          "base-100": "#222831",
+        },
       },
       "dark",
       "cupcake",

@@ -6,13 +6,13 @@ interface Props {
 const { id } = Astro.props;
 ---
 
-<div class='hero bg-primary min-h-screen min-w-screen' id={id}>
+<div class='hero min-h-screen min-w-screen' id={id}>
   <div
-    class='hero-content text-center prose
-    prose-h2:text-5xl prose-h2:font-bold prose-h2:text-base-100
-    prose-p:text-base-300 prose-p:text-2xl prose-p:font-light
-    prose-strong:text-base-100 prose-strong:text-2xl prose-strong:font-bold
-    prose-a:no-underline prose-a:font-bold prose-a:border-b-2 prose-a:pb-1 prose-a:border-b-accent prose-a:text-base-100 prose-a:p-1
+    class='hero-content prose
+    prose-h2:text-5xl prose-h2:font-bold
+    prose-p:text-2xl prose-p:font-light
+     prose-strong:text-2xl prose-strong:font-bold
+    prose-a:no-underline prose-a:font-bold prose-a:border-b-2 prose-a:pb-1 prose-a:border-b-accent prose-a:p-1
     hover:prose-a:bg-accent hover:prose-a:rounded-lg hover:prose-a:p-1'
   >
     <!-- FIXME: Adding a width limit keeps the container from overflowing -->
