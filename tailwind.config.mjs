@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
+const { fontFamily } = require("tailwindcss/defaultTheme");
 import daisyui from "daisyui"
 
 export default {
@@ -8,7 +9,11 @@ export default {
     'node_modules/preline/dist/*.js',
   ],
 	theme: {
-		extend: {},
+		extend: {
+      fontFamily: {
+        sans: ['"Source Sans 3"', ...fontFamily.sans]
+      }
+    },
 	},
 	plugins: [
     daisyui,
@@ -37,4 +42,4 @@ export default {
       "cupcake",
     ],
   },
-}
+};
