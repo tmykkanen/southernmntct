@@ -9,21 +9,33 @@ const color = 'rgb(239, 68, 68)';
 ---
 
 <div
-  class=`hero min-h-screen bg-[url:var(--img-url)]`
+  class='grid w-full place-items-center bg-cover bg-center min-h-screen bg-[url:var(--img-url)]'
   style={{ '--img-url': imgUrl }}
 >
-  <div class='hero-overlay bg-opacity-60'></div>
   <div
-    class='hero-content text-primary text-center prose
-    prose-h1:font-bold prose-h1:text-5xl prose-h1:mb-5 prose-headings:text-primary
-    prose-p:text-2xl prose-p:mb-5
-    prose-a:no-underline prose-a:font-bold prose-a:border-b-4 prose-a:border-b-accent prose-a:text-primary
+    class='col-start-1 row-start-1 h-screen w-screen bg-[var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity)))] bg-opacity-60'
+    style={{ '--tw-bg-opacity': 0.5 }}
+  >
+  </div>
+
+  <!-- 
+  prose-a:border-b-4 prose-a:border-b-accent 
+  hover:prose-a:bg-accent hover:prose-a:rounded-lg
+  -->
+
+  <div
+    class='prose z-0 flex items-center justify-center gap-4 p-4 col-start-1 row-start-1
+    text-center
+    prose-h1:text-primary prose-h1:text-5xl
+    prose-a:no-underline prose-a:font-bold prose-a:text-primary
+    prose-a:bg-[url(/src/icons/1x4-00adb5ff.png)] prose-a:bg-repeat-x prose-a:bg-[left_95%]
     hover:prose-a:bg-accent hover:prose-a:rounded-lg'
     x-data
     x-intersect:enter='$el.classList.add("fadeInUp")'
     x-intersect:leave='$el.classList.remove("fadeInUp")'
   >
-    <slot name='heading' />
-    <slot name='subheading' />
+    <div class='max-w-[40ch] sm:max-w-[65ch]'>
+      <slot name='heading' />
+    </div>
   </div>
 </div>
