@@ -38,11 +38,15 @@ const { features, benefits } = internshipData;
   <!-- TODO: Finish Timeline -->
   <!-- <Timeline /> -->
 
-  <HeroTextCenter id='application'>
-    <h2 slot='heading'>To Apply</h2>
-    <p slot='body'>
-      contact pastor Tyler Mykkanen at Sojourners Church (Albert Lea, MN) at
-      (507) 552-1595 or hello@sojourners.church.
-    </p>
-  </HeroTextCenter>
+  <HeroContainer id='apply'>
+    <HeroContent>
+      <h2 slot='heading'>To Apply</h2>
+      <p slot='body'>
+        contact pastor Tyler Mykkanen at Sojourners Church (Albert Lea, MN) at
+        <a href='tel:507-552-1595'>(507) 552-1595</a> or <a
+          href='mailto:hello@smntct.org'>hello@smntct.org</a
+        >.
+      </p>
+    </HeroContent>
+  </HeroContainer>
 </Layout>
