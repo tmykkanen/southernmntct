@@ -104,7 +104,18 @@ const internshipData = {
       topic: "Debrief / Goodbyes",
       icon: "church",
     },
+  ],
+  activities: [
+    "Report on rhythms of Habits of Grace",
+    "Weekly meetings with supervising pastor",
+    "Participate in Sunday church activities",
+    "Participate in pastoral duties",
+    "Preach at least one sermon",
+    "Teach a Sunday School or Small Group lesson",
+    "Share a meal and gospel conversation with church members at least once a week.",
+    "Observe pastoral hospitality at least once a month."
   ]
+
 
 }
 

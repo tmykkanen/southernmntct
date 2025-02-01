@@ -1,24 +1,25 @@
 ---
 import internshipData from '../data/internshipData.js';
 
-const { timeline } = internshipData;
+const { timeline, activities } = internshipData;
 ---
 
 <!-- Timeline -->
-<div class='bg-secondary min-h-screen min-w-screen'>
-  <h3 class='text-5xl text-base-100'>Timeline</h3>
-  {
-    timeline.map((item) => (
-      <div class='flex gap-x-3'>
-        <div class='w-16 text-end'>
-          <span class='text-xs text-gray-500'>{item.time}</span>
-        </div>
+<div class='grid columns-2 bg-secondary min-h-screen min-w-screen'>
+  <div class='col-start-1'>
+    <h3 class='text-5xl font-bold'>Internship Timeline</h3>
+    {
+      timeline.map((item) => (
+        <div class='flex gap-x-3 col-start-1'>
+          <div class='w-16 text-end'>
+            <span class='text-neutral-500'>{item.time}</span>
+          </div>
 
-        <div class='relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200'>
-          <div class='relative z-10 size-7 flex justify-center items-center'>
-            <div class='size-2 rounded-full bg-gray-400' />
-            {/* TODO: Fix */}
-            {/* <svg
+          <div class='relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-neutral-500'>
+            <div class='relative z-10 size-7 flex justify-center items-center'>
+              <div class='size-2 rounded-full bg-neutral-300' />
+              {/* TODO: Fix */}
+              {/* <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 20 20'
               fill='currentColor'
@@ -30,16 +31,53 @@ const { timeline } = internshipData;
                 clip-rule='evenodd'
               />
             </svg> */}
+            </div>
+          </div>
+
+          <div class='grow pt-0.5 pb-8'>
+            <h3 class='flex gap-x-1.5 font-semibold text-neutral-100'>
+              {item.topic}
+            </h3>
           </div>
         </div>
+      ))
+    }
+  </div>
 
-        <div class='grow pt-0.5 pb-8'>
-          <h3 class='flex gap-x-1.5 font-semibold text-gray-800'>
-            {item.topic}
-          </h3>
+  <div class='row-start-1 col-start-2'>
+    <h3 class='text-5xl font-bold'>Internship Activities</h3>
+    {
+      activities.map((item) => (
+        <div class='flex gap-x-3 col-start-2'>
+          <div class='relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-neutral-500'>
+            <div class='relative z-10 size-7 flex justify-center items-center'>
+              <div class='size-2 rounded-full bg-neutral-300' />
+              {/* TODO: Fix */}
+              {/* <svg
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 20 20'
+            fill='currentColor'
+            class='h-5 w-5'
+          >
+            <path
+              fill-rule='evenodd'
+              d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z'
+              clip-rule='evenodd'
+            />
+          </svg> */}
+            </div>
+          </div>
+
+          <div class='grow pt-0.5 pb-8'>
+            <h3 class='flex gap-x-1.5 font-semibold text-neutral-100'>
+              {item}
+            </h3>
+          </div>
         </div>
-      </div>
-    ))
-  }
+      ))
+    }
+  </div>
+  <!-- Activities -->
+  <!-- <h2 class='col-start-2 row-start-1'>Second column</h2> -->
 </div>
 <!-- End Timeline -->
