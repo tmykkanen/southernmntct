@@ -4,13 +4,10 @@ import HeroTextCenter from '../components/HeroTextCenter.astro';
 import CardHover from '../components/CardHover.astro';
 import HeroContainer from '../components/HeroContainer.astro';
 import HeroContent from '../components/HeroContent.astro';
+import mapData from '../data/mapData.js';
+import Map from '../components/Map.astro';
 ---
 
 <Layout>
-  <HeroContainer id='about'>
-    <HeroContent>
-      <h2 slot='heading'>About Us</h2>
-      <p slot='body'>Coming Soon!</p>
-    </HeroContent>
-  </HeroContainer>
+  <Map data={mapData} fullscreen />
 </Layout>

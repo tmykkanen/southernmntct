@@ -1,19 +1,29 @@
 ---
+// interface Props {
+//   name: string;
+//   info: string;
+//   img: string;
+// }
 
+import Image from 'astro/components/Image.astro';
+
+const { name, info, img } = Astro.props;
+
+console.log('hello');
 ---
 
-<div class='card lg:card-side bg-primary border border-neutral-500 shadow-xl'>
+<div
+  class='card col-span-1 lg:card-side bg-primary border border-neutral-500 shadow-xl'
+>
   <figure>
-    <img
-      src='https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp'
-      alt='Album'
-    />
+    <Image alt={name} src={img} height='800' width='800' />
+    <!-- <img src='/public/images/adam.jpg' alt='Album' /> -->
   </figure>
   <div class='card-body'>
-    <h2 class='card-title'>New album is released!</h2>
-    <p>Click the button to listen on Spotiwhy app.</p>
-    <div class='card-actions justify-end'>
+    <h2 class='card-title'>{name}</h2>
+    <p>{info}</p>
+    <!-- <div class='card-actions justify-end'>
       <button class='btn btn-primary'>Listen</button>
-    </div>
+    </div> -->
   </div>
 </div>
