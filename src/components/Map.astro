@@ -1,0 +1,140 @@
+---
+
+---
+
+<div id='hs-grayscale-leaflet' class='h-[70%] hs-leaflet z-10 m-auto'></div>
+
+<script>
+  window.addEventListener('load', () => {
+    (function () {
+      const map = L.map('hs-grayscale-leaflet', {
+        center: [44.05937461400064, -93.38859819147521],
+        zoom: 9,
+        // Prevent dragging over the limit
+        // maxBounds: [
+        //   [40, -100],
+        //   [60, 10],
+        // ],
+        // maxBoundsViscosity: 1.0,
+      });
+
+      L.tileLayer(
+        'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+        {
+          maxZoom: 19,
+          minZoom: 2,
+          attribution: '© <a href="https://carto.com/attributions">CARTO</a>',
+        }
+      ).addTo(map);
+
+      // Sojourners 43.644039556391355, -93.38859819147521
+      // Owatonna 44.05937461400064, -93.2502878882635
+      // Redemption City Church 44.043209548640746, -92.4932867351392
+      // NCC 44.45266343070468, -93.15989457285775
+      // Gospel Joy 44.1535996472263, -93.98025713443178
+
+      const churches = [
+        {
+          name: 'Sojourners Church',
+          coords: [43.644039556391355, -93.38859819147521],
+        },
+        {
+          name: 'Redemption City Church',
+          coords: [44.043209548640746, -92.4932867351392],
+        },
+        {
+          name: 'Northfield Community Church',
+          coords: [44.45266343070468, -93.15989457285775],
+        },
+        {
+          name: 'Gospel Joy Church',
+          coords: [44.1535996472263, -93.98025713443178],
+        },
+      ];
+
+      churches.forEach((item) => {
+        L.marker(item.coords).bindPopup(item.name).addTo(map);
+      });
+    })();
+  });
+</script>
+
+<style>
+  .hs-leaflet.leaflet-touch .leaflet-control-layers,
+  .hs-leaflet.leaflet-touch .leaflet-bar {
+    border-width: 0px;
+  }
+
+  .hs-leaflet.leaflet-touch .leaflet-bar a {
+    line-height: 1.5;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+
+  .hs-leaflet.leaflet-touch .leaflet-bar a:first-child,
+  .hs-leaflet.leaflet-touch .leaflet-bar a:last-child {
+    border-radius: 8px;
+  }
+
+  .hs-leaflet .leaflet-control-zoom-in,
+  .hs-leaflet .leaflet-control-zoom-out {
+    font-weight: 400;
+    font-size: 18px;
+    color: #1f2937;
+    text-indent: 0px;
+  }
+
+  .hs-leaflet .leaflet-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .hs-leaflet .leaflet-bar a {
+    border-width: 0;
+  }
+
+  .hs-leaflet .leaflet-bar a:hover,
+  .hs-leaflet .leaflet-bar a:focus {
+    background-color: #e5e7eb;
+  }
+
+  .hs-leaflet .leaflet-popup-content-wrapper,
+  .hs-leaflet .leaflet-popup-tip {
+    box-shadow:
+      0 4px 6px -1px rgb(0 0 0 / 0.1),
+      0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+
+  .hs-leaflet .leaflet-popup-tip {
+    border-radius: 4px;
+  }
+
+  .hs-leaflet.leaflet-container a.leaflet-popup-close-button {
+    top: -10px;
+    right: -10px;
+    border-radius: 9999px;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .hs-leaflet.leaflet-container a.leaflet-popup-close-button:hover {
+    background-color: #f3f4f6;
+  }
+
+  .hs-leaflet-unstyled-popover .leaflet-popup-content-wrapper {
+    display: flex;
+  }
+
+  .hs-leaflet-unstyled-popover .leaflet-popup-content {
+    padding: 0;
+    margin: 0;
+    background: none;
+    line-height: normal;
+    border-radius: 0;
+    font-size: inherit;
+    min-height: auto;
+  }
+</style>
