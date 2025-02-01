@@ -54,14 +54,15 @@ import HeroContent from '../components/HeroContent.astro';
             >Manifesto: The Mad Farmer Liberation Front:</em
           >
         </p>
-        <p class='poetry'>
-          So, friends, every day do something that won’t compute.... Invest in
-          the millennium. Plant sequoias. Say that your main crop is the forest
-          that you did not plant, that you will not live to harvest.
-          <!-- prose-pre:text-left prose-pre:text-base-300 prose-pre:text-2xl prose-pre:font-light prose-pre:bg-transparent prose-pre:font-sans prose-pre:mt-7 prose-pre:mb-7 prose-pre:italic' -->
-        </p>
+        <!-- prose-pre:text-left prose-pre:text-base-300 prose-pre:text-2xl prose-pre:font-light prose-pre:bg-transparent prose-pre:font-sans prose-pre:mt-7 prose-pre:mb-7 prose-pre:italic' -->
+        <pre>So, friends, every day do something
+that won’t compute....
+Invest in the millennium. Plant sequoias.
+Say that your main crop is the forest
+that you did not plant,
+that you will not live to harvest.</pre>
         <p>
-          We’ve caught this madness. And out of this gospel madness flows<a
+          We’ve caught this madness. And out of this gospel madness flows <a
             href='#vision'>our 100 year vision.</a
           >
         </p>
@@ -76,10 +77,3 @@ import HeroContent from '../components/HeroContent.astro';
     </Fragment>
   </FeatureBlockRight>
 </Layout>
-
-<style>
-  .poetry {
-    @apply text-left italic
-    /* prose-pre:text-base-300 prose-pre:text-2xl prose-pre:font-light prose-pre:bg-transparent prose-pre:font-sans prose-pre:mt-7 prose-pre:mb-7 prose-pre:italic; */;
-  }
-</style>

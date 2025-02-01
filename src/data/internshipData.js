@@ -20,27 +20,27 @@ const internshipData = {
     {
       title: "Self-Assessment",
       description: "Through the internship experiences, the intern will assess their own desire and preparedness for pastoral ministry in general and for ministry in normative size and small place settings in particular.",
-      icon: "church",
+      icon: "checkmark",
     },
     {
       title: "Practical Training",
      description: "The intern will receive mentoring from a supervising pastor and cohort mentor. Through guided reading, discussion, and participation in essential areas of pastoral ministry, the intern will grow in competence in skills essential to ministry.",
-     icon: "fellowship",
+     icon: "checkmark",
     },
     {
       title: "External Assessment and Affirmation",
      description: "The local church and supervising pastor will have the opportunity to assess (and Lord-willing, affirm) the intern’s gifts and calling to pastoral ministry.",
-     icon: "fellowship",
+     icon: "checkmark",
     },
     {
       title: "Participation in the Life of a Healthy Church",
      description: "The intern will enjoy the loving support of a local church which assumes the responsibility for his care and training. Through participation in the weekly rhythms of the local church, the intern will enjoy the encouragement of other believers as he explores his calling.",
-     icon: "fellowship",
+     icon: "checkmark",
     },
     {
       title: "Blessing to the Local Church",
      description: "The intern and the local church will have a mutually beneficial relationship. The intern will meet pastoral needs in the church and the church will be blessed as they exercise hospitable welcome to the intern.",
-     icon: "fellowship",
+     icon: "checkmark",
     },
   ],
   timeline: [

@@ -11,12 +11,17 @@ const { data, id } = Astro.props;
 // TODO: Make accordion for small screens?
 ---
 
-<div class='hero bg-secondary min-h-screen' id={id}>
+<div
+  class='grid w-full place-items-center bg-cover bg-center
+bg-secondary min-h-screen'
+  id={id}
+>
   <div class='grid md:grid-cols-2 gap-12 mt-24'>
     <!-- HEADING -->
     <div
-      class='hero-content text-center prose
-    prose-h2:text-5xl prose-h2:font-bold'
+      class='prose z-0 flex items-center justify-center gap-4 p-4 col-start-1 row-start-1
+      text-center
+      prose-h2:text-5xl prose-h2:font-bold'
     >
       <h2 class='text-3xl font-bold lg:text-5xl max-w-[16ch] md:max-w-[65ch]'>
         <slot name='heading' />

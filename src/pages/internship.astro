@@ -4,31 +4,36 @@ import HeroTextCenter from '../components/HeroTextCenter.astro';
 import FeatureBlockRight from '../components/FeatureBlockRight.astro';
 import FeatureBlockLeft from '../components/FeatureBlockLeft.astro';
 import Timeline from '../components/Timeline.astro';
+import HeroContainer from '../components/HeroContainer.astro';
+import HeroContent from '../components/HeroContent.astro';
+import FeaturesBlock from '../components/FeaturesBlock.astro';
 
 import internshipData from '../data/internshipData.js';
 const { features, benefits } = internshipData;
 ---
 
 <Layout>
-  <HeroTextCenter id='internship-overview'>
-    <h2 class='' slot='heading'>
-      Our summer internship is all about catching a Gospel Imaginary.
-    </h2>
-    <p slot='body'>
-      We want to give you a taste of our shared convictions and help you think
-      through further ministry training and partnership in Soutnern MN.<a
-        href='#features'>Interested? Scroll down to learn more.</a
-      >
-    </p>
-  </HeroTextCenter>
+  <HeroContainer id='internship-overview'>
+    <HeroContent>
+      <h2 slot='heading'>
+        Our summer internship is all about catching a Gospel Imaginary.
+      </h2>
+      <p slot='body'>
+        We want to give you a taste of our shared convictions and help you think
+        through further ministry training and partnership in Soutnern MN. <a
+          href='#features'>Interested? Scroll down to learn more.</a
+        >
+      </p>
+    </HeroContent>
+  </HeroContainer>
 
-  <FeatureBlockRight id='features' data={features}>
+  <FeaturesBlock id='features' data={features} featureSide='right'>
     <Fragment slot='heading'>The Summer Internship is</Fragment>
-  </FeatureBlockRight>
+  </FeaturesBlock>
 
-  <FeatureBlockLeft id='benefits' data={benefits}>
+  <FeaturesBlock id='benefits' data={benefits} featureSide='left'>
     <Fragment slot='heading'>Five Reasons to Consider the Internship</Fragment>
-  </FeatureBlockLeft>
+  </FeaturesBlock>
 
   <Timeline />
 
