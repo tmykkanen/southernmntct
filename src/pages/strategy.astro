@@ -3,18 +3,34 @@ import Layout from '../layouts/Layout.astro';
 import FeatureBlockRight from '../components/FeatureBlockRight.astro';
 import strategyData from '../data/strategyData.js';
 import HeroTextCenter from '../components/HeroTextCenter.astro';
+import FeaturesBlock from '../components/FeaturesBlock.astro';
+import HeroContainer from '../components/HeroContainer.astro';
+import HeroContent from '../components/HeroContent.astro';
 ---
 
 <Layout>
-  <FeatureBlockRight id='vision' data={strategyData}>
+  <FeaturesBlock data={strategyData} id='strategy' featureSide='right'>
     <Fragment slot='heading'>Our Strategy</Fragment>
-  </FeatureBlockRight>
-  <HeroTextCenter id='fellowship'>
-    <h2 slot='heading'>Monthly Pastoral Fellowship</h2>
-    <p slot='body'>More info about monthly fellowship</p>
-  </HeroTextCenter>
-  <HeroTextCenter id='fellowship'>
-    <h2 slot='heading'>Monthly Pastoral Fellowship</h2>
-    <p slot='body'>More info about monthly fellowship</p>
-  </HeroTextCenter>
+  </FeaturesBlock>
+
+  <HeroContainer id='fellowship'>
+    <HeroContent>
+      <h2 slot='heading'>Monthly Pastoral Fellowship</h2>
+      <p slot='body'>Coming Soon!</p>
+    </HeroContent>
+  </HeroContainer>
+
+  <HeroContainer id='residencies'>
+    <HeroContent>
+      <h2 slot='heading'>Pastoral Residencies</h2>
+      <p slot='body'>Coming Soon!</p>
+    </HeroContent>
+  </HeroContainer>
+
+  <HeroContainer id='events'>
+    <HeroContent>
+      <h2 slot='heading'>Periodic Training Events</h2>
+      <p slot='body'>Coming Soon!</p>
+    </HeroContent>
+  </HeroContainer>
 </Layout>

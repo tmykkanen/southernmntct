@@ -2,31 +2,31 @@ const visionData = [
   {
     title: "Big God Theology",
    titlePre: "expressed in",
-   description: "Big God Theology description",
+   description: "",
    icon: "bible" 
  },
   {
     title: "Persuasive Preaching",
    titlePre: "proclaimed by",
-   description: "Persuasive Preaching description",
+   description: "",
    icon: "preaching" 
  },
  {
    titlePre: "portrayed through",
    title: "Intentional Ecclesiology",
-   description: "Intentional Ecclesiology description",
+   description: "",
    icon: "church"
  },
   {
    titlePre: "experienced as",
    title: "Compelling Culture",
-   description: "Compelling Culture description",
+   description: "",
    icon: "community"
  },
   {
    titlePre: "spread through",
    title: "Deliberately Rural Mission",
-   description: "Deliberately Rural Mission description",
+   description: "",
   icon: "rural"
  }
 ]

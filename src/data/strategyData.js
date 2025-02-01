@@ -1,25 +1,25 @@
 const strategyData = [
   {
     title: "Monthly Pastoral Fellowship",
-    description: "description",
+    description: "",
     icon: "fellowship",
     link: "#fellowship"
   },
   {
     title: "Summer Pastoral Internships",
-   description: "description",
+   description: "",
    icon: "sun",
    link: "/internship"
   },
   {
     title: "Extended Pastoral Residencies",
-   description: "description",
+   description: "",
    icon: "learn",
    link: "#residencies"
   },
   {
     title: "Periodic Training Events",
-   description: "description",
+   description: "",
    icon: "event",
     link: "#events"
   }

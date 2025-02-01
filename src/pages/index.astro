@@ -6,6 +6,7 @@ import FeatureBlockRight from '../components/FeatureBlockRight.astro';
 import visionData from '../data/visionData.js';
 import HeroContainer from '../components/HeroContainer.astro';
 import HeroContent from '../components/HeroContent.astro';
+import FeaturesBlock from '../components/FeaturesBlock.astro';
 ---
 
 <Layout>
@@ -70,10 +71,10 @@ that you will not live to harvest.</pre>
     </HeroContent>
   </HeroContainer>
 
-  <FeatureBlockRight id='vision' data={visionData}>
+  <FeaturesBlock id='vision' data={visionData} featureSide='right'>
     <Fragment slot='heading'>
       Over the next 100 years, we aim to start and strengthen churches in
       Southern MN that share a Gospel Imaginary.
     </Fragment>
-  </FeatureBlockRight>
+  </FeaturesBlock>
 </Layout>

@@ -2,18 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import HeroTextCenter from '../components/HeroTextCenter.astro';
 import CardHover from '../components/CardHover.astro';
+import HeroContainer from '../components/HeroContainer.astro';
+import HeroContent from '../components/HeroContent.astro';
 ---
 
 <Layout>
-  <HeroTextCenter id='about'>
-    <h2 slot='heading'>About</h2>
-  </HeroTextCenter>
-  <div class='grid grid-cols-3 gap-4 container mx-auto'>
-    <CardHover />
-    <CardHover />
-    <CardHover />
-    <CardHover />
-    <CardHover />
-    <CardHover />
-  </div>
+  <HeroContainer id='about'>
+    <HeroContent>
+      <h2 slot='heading'>About Us</h2>
+      <p slot='body'>Coming Soon!</p>
+    </HeroContent>
+  </HeroContainer>
 </Layout>

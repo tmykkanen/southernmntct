@@ -17,7 +17,11 @@ const navData = [
       },
       {
         name: "Residency",
-        path: "/residency",
+        path: "/strategy#residencies",
+      },
+      {
+        name: "Events",
+        path: "/strategy#events",
       }
     ]
     },
