@@ -9,7 +9,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <!-- <div id='page-header' class='navbar bg-base-100 fixed top-0 z-50'> -->
-<header id='page-header' class='navbar bg-neutral z-50 fixed-header'>
+<header id='page-header' class='navbar bg-neutral z-50 fixed bottom-auto top-0'>
   <div class='navbar-start'>
     <!-- <div class='dropdown'> -->
     <FullscreenModalButton />
@@ -17,7 +17,7 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <div class='navbar-end'>
-    <a id='logo-btn' class='btn btn-scroll text-xl flex opacity-90' href='/'>
+    <a id='logo-btn' class='btn btn-ghost text-primary text-xl' href='/'>
       Southern MN TCT
       <Icon name='tct_logo' class='text-4xl' />
     </a>
@@ -33,14 +33,18 @@ const currentPath = Astro.url.pathname;
   // Display unique positioning / behavior for navbar on homepage
   if (currentPath === '/') {
     header.classList.remove('fixed-header');
-    header.classList.add('absolute', 'bottom-0', 'bg-transparent');
-    logoBtn.classList.toggle('btn-scroll');
+    header.classList.add('bg-transparent');
+    logoBtn.classList.add('hidden');
 
     document.addEventListener('scroll', () => {
       const d = page.clientHeight - page.scrollTop - header.offsetHeight;
-      console.log(d);
-      header.classList.toggle('fixed-header', d < 0);
-      logoBtn.classList.toggle('btn-scroll', d < 0);
+      if (d < 0) {
+        header.classList.replace('bg-transparent', 'bg-neutral');
+        logoBtn.classList.replace('hidden', 'flex');
+      } else {
+        header.classList.replace('bg-neutral', 'bg-transparent');
+        logoBtn.classList.replace('flex', 'hidden');
+      }
     });
   }
 </script>

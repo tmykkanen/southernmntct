@@ -6,7 +6,7 @@ const currentPath = Astro.url.pathname;
   id='modal-btn'
   tabindex='0'
   role='button'
-  class='btn btn-ghost text-primary opacity-90'
+  class='btn btn-ghost text-primary border-opacity-0'
   aria-haspopup='dialog'
   aria-expanded='false'
   aria-controls='hs-full-screen-modal'
@@ -29,16 +29,29 @@ const currentPath = Astro.url.pathname;
 
 <script define:vars={{ currentPath }}>
   const modalBtn = document.querySelector('#modal-btn');
+  const header = document.querySelector('#page-header');
   const page = document.documentElement;
 
   // Display unique positioning / behavior for navbar on homepage
   if (currentPath === '/') {
-    modalBtn.classList.remove('btn-ghost', 'text-primary');
+    modalBtn.classList.replace('btn-ghost', 'btn-primary');
+    modalBtn.classList.remove('text-primary');
+    modalBtn.classList.add('bg-opacity-50');
 
     document.addEventListener('scroll', () => {
-      const d = page.clientHeight - page.scrollTop - modalBtn.offsetHeight;
-      modalBtn.classList.toggle('btn-ghost', d < 0);
-      modalBtn.classList.toggle('text-primary', d < 0);
+      const d = page.clientHeight - page.scrollTop - header.offsetHeight;
+      if (d < 0) {
+        modalBtn.classList.replace('btn-primary', 'btn-ghost');
+        modalBtn.classList.add('text-primary');
+        modalBtn.classList.remove('bg-opacity-50');
+      } else {
+        modalBtn.classList.replace('btn-ghost', 'btn-primary');
+        modalBtn.classList.remove('text-primary');
+        modalBtn.classList.add('bg-opacity-50');
+      }
+
+      // modalBtn.classList.toggle('btn-ghost', d < 0);
+      // modalBtn.classList.toggle('text-primary', d < 0);
     });
   }
 </script>
