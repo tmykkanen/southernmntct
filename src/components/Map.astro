@@ -21,6 +21,8 @@ console.log(mapHeight);
   id='hs-grayscale-leaflet'
   class='h-[var(--map-height)] hs-leaflet z-10 m-auto'
   style={{ '--map-height': mapHeight }}
+  x-data
+  x-intersect:enter='$el.classList.add("blur-in")'
 >
 </div>
 
@@ -94,10 +96,8 @@ console.log(mapHeight);
 
       let width = document.documentElement.clientWidth;
       if (width < 768) {
-        // set the zoom level to 10
         map.setZoom(8);
       } else {
-        // set the zoom level to 8
         map.setZoom(9);
       }
     })();

@@ -18,11 +18,6 @@ const color = 'rgb(239, 68, 68)';
   >
   </div>
 
-  <!-- 
-  prose-a:border-b-4 prose-a:border-b-accent 
-  hover:prose-a:bg-accent hover:prose-a:rounded-lg
-  -->
-
   <div
     class='prose z-0 flex items-center justify-center gap-4 p-4 col-start-1 row-start-1
     text-center
@@ -31,8 +26,7 @@ const color = 'rgb(239, 68, 68)';
     prose-a:bg-[url(/src/icons/1x4-00adb5ff.png)] prose-a:bg-repeat-x prose-a:bg-[left_95%]
     hover:prose-a:bg-accent hover:prose-a:rounded-lg'
     x-data
-    x-intersect:enter='$el.classList.add("fadeInUp")'
-    x-intersect:leave='$el.classList.remove("fadeInUp")'
+    x-intersect:enter='$el.classList.add("fadeInUp-slow")'
   >
     <div class='max-w-[40ch] sm:max-w-[65ch]'>
       <slot name='heading' />

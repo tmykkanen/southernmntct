@@ -23,6 +23,8 @@ bg-secondary min-h-screen'
       class={featureSide === 'left'
         ? 'prose z-0 flex items-center justify-center gap-4 p-4 text-center prose-h2:text-5xl prose-h2:font-bold order-1 md:order-2'
         : 'prose z-0 flex items-center justify-center gap-4 p-4 text-center prose-h2:text-5xl prose-h2:font-bold'}
+      x-data
+      x-intersect:enter='$el.classList.add("fadeInUp")'
     >
       <h2 class='text-3xl font-bold lg:text-5xl max-w-[16ch] md:max-w-[65ch]'>
         <slot name='heading' />
@@ -36,6 +38,8 @@ bg-secondary min-h-screen'
       class={featureSide === 'left'
         ? 'my-auto mx-auto mb-10 space-y-6 lg:space-y-10 max-w-[40ch] sm:max-w-[65ch] order-2 md:order-1'
         : 'my-auto mx-auto mb-10 space-y-6 lg:space-y-10 max-w-[40ch] sm:max-w-[65ch]'}
+      x-data
+      x-intersect:enter='$el.classList.add("fadeInUp-slow")'
     >
       {
         data.map((item: any) => (
