@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon/components';
 import FullscreenModalButton from './FullscreenModalButton.astro';
 
 const currentPath = Astro.url.pathname;
+console.log(currentPath);
 
 // TODO: Refactor using astro.self? https://docs.astro.build/en/reference/astro-syntax/#astroself
 ---
@@ -14,46 +15,59 @@ const currentPath = Astro.url.pathname;
     <!-- <div class='dropdown'> -->
     <FullscreenModalButton />
     <!-- </div> -->
-  </div>
-
-  <div class='navbar-end'>
-    <a id='logo-btn' class='btn btn-scroll text-xl flex opacity-90' href='/'>
-      Southern MN TCT
+    <a class='btn btn-ghost text-xl hidden lg:flex text-primary' href='/'>
       <Icon name='tct_logo' class='text-4xl' />
+      Southern MN TCT
+    </a>
+  </div>
+  <div class='navbar-center hidden text-primary lg:flex'>
+    <ul class='menu menu-horizontal px-1'>
+      {
+        navData.map((link) => (
+          <li>
+            <a href={link.path}>{link.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class='navbar-end'>
+    <a
+      class='btn btn-ghost text-primary hidden lg:flex'
+      href='mailto:hello@smntct.org'>Contact Us</a
+    >
+    <a class='btn btn-ghost text-xl lg:hidden text-primary' href='/'>
+      <!-- <Icon name='tct_logo' class='text-4xl' /> -->
+      Southern MN TCT
     </a>
   </div>
 </header>
 
 <script define:vars={{ currentPath }}>
   const header = document.querySelector('#page-header');
-  const logoBtn = document.querySelector('#logo-btn');
-  const modalBtn = document.querySelector('#modal-btn');
   const page = document.documentElement;
 
   // Display unique positioning / behavior for navbar on homepage
   if (currentPath === '/') {
     header.classList.remove('fixed-header');
-    header.classList.add('absolute', 'bottom-0', 'bg-transparent');
-    logoBtn.classList.toggle('btn-scroll');
+    header.classList.add('absolute', 'bottom-0');
 
     document.addEventListener('scroll', () => {
       const d = page.clientHeight - page.scrollTop - header.offsetHeight;
-      console.log(d);
       header.classList.toggle('fixed-header', d < 0);
-      logoBtn.classList.toggle('btn-scroll', d < 0);
     });
   }
 </script>
 
 <style>
-  .btn-scroll {
-    @apply btn-ghost text-primary;
+  .btn {
+    /* @apply hover:bg-accent hover:text-base-100; */
   }
   .menu a {
     @apply hover:bg-accent hover:text-base-100 mx-2;
   }
 
   .fixed-header {
-    @apply fixed bottom-auto top-0 bg-neutral;
+    @apply fixed bottom-auto top-0;
   }
 </style>

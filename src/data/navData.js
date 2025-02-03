@@ -28,6 +28,10 @@ const navData = [
   {
     name: "Who We Are",
     path: "/about"
+  },
+  {
+    name: "Contact Us",
+    path: "mailto:hello@smntct.org"
   }
 ]
 

@@ -1,17 +1,12 @@
-<!-- <button
-  type='button'
-  class='py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none'
-  aria-haspopup='dialog'
-  aria-expanded='false'
-  aria-controls='hs-full-screen-modal'
-  data-hs-overlay='#hs-full-screen-modal'
->
-  Full screen
-</button> -->
+---
+const currentPath = Astro.url.pathname;
+---
+
 <div
+  id='modal-btn'
   tabindex='0'
   role='button'
-  class='btn btn-ghost text-primary lg:hidden'
+  class='btn btn-ghost text-primary opacity-90'
   aria-haspopup='dialog'
   aria-expanded='false'
   aria-controls='hs-full-screen-modal'
@@ -31,3 +26,19 @@
       d='M4 6h16M4 12h8m-8 6h16'></path>
   </svg>
 </div>
+
+<script define:vars={{ currentPath }}>
+  const modalBtn = document.querySelector('#modal-btn');
+  const page = document.documentElement;
+
+  // Display unique positioning / behavior for navbar on homepage
+  if (currentPath === '/') {
+    modalBtn.classList.remove('btn-ghost', 'text-primary');
+
+    document.addEventListener('scroll', () => {
+      const d = page.clientHeight - page.scrollTop - modalBtn.offsetHeight;
+      modalBtn.classList.toggle('btn-ghost', d < 0);
+      modalBtn.classList.toggle('text-primary', d < 0);
+    });
+  }
+</script>
