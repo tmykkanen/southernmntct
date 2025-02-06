@@ -7,7 +7,7 @@ const internshipData = {
     },
     {
       title: "Cohort-Based",
-     description: "Interns will participate in the Sword and the Seeds Internship cohort spread throughout participating churches. The cohort will gather weekly for discussion and reflection on practical ministry topics as experienced in the local church setting. At scheduled times through the summer, the cohort will have extended training times together focused in four areas related to the TCT Southern Minnesota Vision: (1) Persuasive Preaching; (2) Essential Ecclesiology; (3) Practical Shepherding unto Compelling Culture; and (4) Small Place Ministry unto Multiplying Mission.",
+     description: "Interns will participate in a cohort spread throughout participating churches. The cohort will gather weekly for discussion and reflection on practical ministry topics as experienced in the local church setting. At scheduled times through the summer, the cohort will have extended training times together focused in four areas related to the TCT Southern Minnesota Vision: (1) Persuasive Preaching; (2) Intentional Ecclesiology; (3) Compelling Culture; and (4) Deliberately Rural Mission.",
      icon: "fellowship",
     },
     {
